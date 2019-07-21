@@ -22,25 +22,65 @@ package cn.leetCode.t1d;
 链接：https://leetcode-cn.com/problems/search-in-rotated-sorted-array
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。*/
 public class t33 {
-    public static int search(int[] nums, int target) {
-        int left = 0;
-        int right = nums.length-1;
-        int mid = 0;
 
-        while (left < right) {
-            mid = left + (right-left)/2;
-            if (nums[mid]>nums[right]){
-                left = mid + 1;
-
+    private static int search(int[] nums,int target){
+        int ret = -1;
+        if (nums.length == 0) {
+            return ret;
+        }
+        if (nums.length == 1) {
+            if (nums[0] == target) {
+                return 0;
+            }
+            return ret;
+        }
+        if (nums[0] < nums[nums.length-1]){
+            ret = binSearch(nums,target,0,nums.length-1);
+        }else {
+            int value = nums[0];
+            int low = 0;
+            int heigh = nums.length - 1;
+            int mid = 0;
+            //查找分界点
+            while (low <= heigh) {
+                mid = low + ((heigh - low) >> 1);
+                if (nums[mid] >= value) {
+                    low = mid + 1;
+                }else {
+                    if (nums[mid] < nums[mid-1]){
+                        break;
+                    }
+                    heigh = mid - 1;
+                }
+            }
+            if (target > value) {
+                ret = binSearch(nums,target,0,mid-1);
+            } else if (target < value) {
+                ret = binSearch(nums,target,mid,nums.length-1);
             }else {
-                right = mid - 1;
+                return 0;
+            }
+
+        }
+        return ret;
+    }
+
+    private static int binSearch(int[] nums,int target,int low,int heigh) {
+        while (low <= heigh) {
+            int mid = low + ((heigh - low) >> 1);
+            if (nums[mid] > target){
+                heigh = mid - 1;
+            }else if (nums[mid] < target){
+                low = mid + 1;
+            }else {
+                return mid;
             }
         }
-        return mid;
+        return -1;
     }
 
     public static void main(String[] args) {
-        int[] nums = {0,1,2,3,4,5,6,7,8,9};
+        int[] nums = {1,1};
         System.out.println(search(nums,1));
     }
 }

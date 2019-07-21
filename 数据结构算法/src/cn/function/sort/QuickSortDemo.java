@@ -1,7 +1,10 @@
 package cn.function.sort;
 
+/**
+ * 快速排序
+ */
 public class QuickSortDemo {
-     private static int[] quickSort(int[] nums, int star, int end){
+     public static int[] quickSort(int[] nums, int star, int end){
         if (star > end) {
             return null;
         }
@@ -25,6 +28,5 @@ public class QuickSortDemo {
         quickSort(nums,star,i-1);
         quickSort(nums,i+1,end);
         return nums;
-
     }
 }
