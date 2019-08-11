@@ -86,7 +86,7 @@ public class t13 {
     }
 
     public static void main(String[] args) {
-        String s = new String("MCMXCIV");
+        String s = "IVM";
         System.out.println(s.charAt(0));
         System.out.println(romanToInt(s));
 
