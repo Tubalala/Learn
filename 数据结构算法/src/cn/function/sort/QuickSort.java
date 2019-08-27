@@ -31,11 +31,9 @@ public class QuickSort {
                 }
             }
         }
-
         int temp = a[i];
         a[i] = a[end];
         a[end] = temp;
-//        System.out.print(i+" ");
         return i;
     }
 }

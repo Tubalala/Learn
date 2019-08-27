@@ -14,10 +14,9 @@ package cn.leetCode.t100d;
 示例 2:
 
 输入: [7,6,4,3,1]
-输入: [7,1,4,3,-1]
 输出: 0
 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
-
+输入: [7,1,4,3,-1]
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。*/
@@ -38,7 +37,7 @@ public class t121 {
         }
         return result;
     }*/
-    public static int maxProfit(int[] prices) {
+    /*public static int maxProfit(int[] prices) {
         int res = 0;
         int j = 0;
         for (int i = 0; i < prices.length - 1; i++) {
@@ -56,6 +55,22 @@ public class t121 {
             }
         }
         return res;
+    }*/
+
+    public static int maxProfit(int[] prices) {
+        if (prices.length == 0) {
+            return 0;
+        }
+        int ret = 0;
+        int min = prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] < min) {
+                min = prices[i];
+            }else {
+                ret = Math.max(ret,prices[i]-min);
+            }
+        }
+        return ret;
     }
 
     public static void main(String[] args) {

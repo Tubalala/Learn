@@ -17,7 +17,7 @@ nums2 = [2,5,6],       n = 3
 链接：https://leetcode-cn.com/problems/merge-sorted-array
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。*/
 public class t88 {
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
+    /*public void merge(int[] nums1, int m, int[] nums2, int n) {
         int l1 = m-1,l2=n-1,len = m+n-1;
         while(l2 >= 0){
             if( l1>=0 && nums1[l1] > nums2[l2] ){
@@ -26,5 +26,24 @@ public class t88 {
                 nums1[len--]=nums2[l2--];
             }
         }
+    }*/
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int i = m - 1;
+        int j = n - 1;
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] > nums2[j]) {
+                nums1[i+j+1] = nums1[i];
+                i--;
+            }else {
+                nums1[i+j+1] = nums2[j];
+                j--;
+            }
+        }
+        if (j >= 0) {
+            for (; j >= 0 ; j--) {
+                nums1[j] = nums2[j];
+            }
+        }
+
     }
 }
