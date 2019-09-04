@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node</title>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            div2
+        </div>
+        div1
+    </div>
+    <a href="javascript:void(0)" id="del">删除子节</a>
+    <a href="javascript:void(0)" id="add">增加子节</a>
+<script>
+    var a = document.getElementById("del");
+    a.onclick = function () {
+        var div1 = document.getElementById("div1");
+        var div2 = document.getElementById("div2");
+        div1.removeChild(div2);
+    }
+
+    var  add = document.getElementById("add");
+    add.onclick = function () {
+        var div1 = document.getElementById("div1");
+        var div3 = document.createElement("div");
+        div3.setAttribute("id","div3");
+        div1.appendChild(div3);
+    }
+
+</script>
+</body>
+</html>

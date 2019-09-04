@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            /*//js方式
+            var citys = $("#city li");
+            for (var i = 0; i < citys.length; i++) {
+                if ("上海" == citys[i].innerHTML){
+                    break;
+                }
+                alert(i+":"+citys[i].innerHTML);
+            }*/
+            //each方法
+            var citys = $("#city li");
+           /* citys.each(function () {
+                alert(this.innerHTML);
+            })*/
+           /* citys.each(function (index,element) {
+                // alert(index+":"+element.innerHTML);
+                if (element.innerHTML == "上海"){
+                    //false 结束 break   true continue
+                    return false;
+                }
+                alert(index+":"+$(element).html());
+            })*/
+           /* $.each(citys,function () {
+                 alert($(this).html());
+            })*/
+            //for...of...方式
+            for (li of citys) {
+                alert($(li).html());
+            }
+        })
+
+    </script>
+</head>
+<body>
+<ul id="city">
+    <li>北京</li>
+    <li>上海</li>
+    <li>天津</li>
+    <li>重庆</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>表格隔行换色</title>
+    <script>
+        //匿名函数，加载页面。当然可以在下面的body中写onload事件绑定一个有名函数
+        window.onload=function(){
+            //1.获取表格
+            var tblEle=document.getElementById("tbl");
+            //2.获取表格中tbody里的行数。js中有数组，无集合，如果下面有多个tbody，从0开始编号
+            var len=tblEle.tBodies[0].rows.length;
+            //alert(len);
+            //3.对tbody的行遍历
+            for(var i=0;i<len;i++){
+                if(i%2==0){
+                    //4.对奇数行设置为pink，下标为偶数对应于奇数行
+                    tblEle.tBodies[0].rows[i].style.backgroundColor="pink";
+                }
+                //5.对偶数行进行设置为gold背景色
+                else{
+                    tblEle.tBodies[0].rows[i].style.backgroundColor="gold";
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<table border="1px" width="566px" height="260px" align="center" id="tbl">
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr>
+        <th>1</th>
+        <th>张三</th>
+        <th>20</th>
+    </tr>
+
+    <tr>
+        <th>2</th>
+        <th>王五</th>
+        <th>22</th>
+    </tr>
+
+    <tr>
+        <th>3</th>
+        <th>李四</th>
+        <th>28</th>
+    </tr>
+    <tr>
+        <th>4</th>
+        <th>王霞</th>
+        <th>20</th>
+    </tr>
+
+    <tr>
+        <th>5</th>
+        <th>张明</th>
+        <th>23</th>
+    </tr>
+
+    <tr>
+        <th>6</th>
+        <th>房度</th>
+        <th>19</th>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case</title>
+</head>
+<body>
+<style>
+    div{
+        margin-top: 10px;
+        margin-left: 30%;
+    }
+    table{
+        border: 1px solid;
+        width: 500px;
+        margin-left: 30%;
+    }
+    td,th{
+        text-align: center;
+        border: 1px solid;
+    }
+    .over{
+        background-color: aqua;
+    }
+    .out{
+        background-color: white;
+    }
+</style>
+<div>
+
+    <input type="button" id="selectAll" value="全选">
+    <input type="button" id="unselectAll" value="全不选">
+    <input type="button" id="selectRec" value="反选">
+</div>
+<table border="1">
+    <caption>学生信息表</caption>
+
+    <tr>
+        <th><input type="checkbox" name="cb" id="firstCb"></th>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="cb"></td>
+        <td>1</td>
+        <td>张三</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);" onclick="fun1(this)">删除</a> </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="cb"></td>
+        <td>2</td>
+        <td>李四</td>
+        <td>女</td>
+        <td><a href="javascript:void(0);" onclick="fun1(this)">删除</a> </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="cb"></td>
+        <td>3</td>
+        <td>王五</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);" onclick="fun1(this)">删除</a> </td>
+    </tr>
+</table>
+<script>
+    window.onload = function(){
+        document.getElementById("selectAll").onclick = function(){
+            var cbs = document.getElementsByName("cb");
+            for (var i = 0; i < cbs.length; i++) {
+                cbs[i].checked = true;
+            }
+
+        };
+        document.getElementById("unselectAll").onclick = function(){
+            var cbs = document.getElementsByName("cb");
+            for (var i = 0; i < cbs.length; i++) {
+                cbs[i].checked = false;
+            }
+
+        };
+        document.getElementById("selectRec").onclick = function(){
+            var cbs = document.getElementsByName("cb");
+            for (var i = 0; i < cbs.length; i++) {
+                cbs[i].checked = !cbs[i].checked;
+            }
+
+        };
+        document.getElementById("firstCb").onclick = function(){
+            var cbs = document.getElementsByName("cb");
+            for (var i = 0; i < cbs.length; i++) {
+                cbs[i].checked = this.checked;
+            }
+
+        };
+
+        var trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            trs[i].onmouseover = function () {
+                this.className = "over";
+            };
+            trs[i].onmouseout = function () {
+                this.className = "out";
+            }
+
+        }
+
+        var fun1 = function (obj) {
+            var table = obj.parentNode.parentNode.parentNode;
+            var td = obj.parentNode.parentNode;
+            table.removeChild(td);
+        };
+    };
+
+</script>
+</body>
+</html>

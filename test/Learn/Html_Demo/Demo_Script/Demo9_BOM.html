@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bom</title>
+</head>
+<body>
+<button id="button" style="float: top">退出</button>
+<button id="button1" style="float: top">弹出窗口</button>
+<button id="button2" style="float: top">关闭新窗口</button>
+<img id="img" src="img/a_1.jpg" align="center" width="100%">
+<script>
+    var i = 1;
+    function fun2() {
+        i++;
+        if (i > 3) {
+            i = 1;
+        }
+        var img = document.getElementById("img");
+        img.src = "img/a_"+i+".jpg";
+    }
+    setInterval(fun2,3000);
+
+
+
+
+    var a = document.getElementById("button");
+    a.onclick = function () {
+        var flag = confirm("你确定要退出吗？");
+        if (flag) {
+            alert("欢迎下次光临");
+        }else {
+            alert("点错了");
+        }
+    }
+
+    var name = prompt("请输入用户名：");alert(name);
+
+    var newWindow;
+
+    var b = document.getElementById("button1");
+    b.onclick = function(){
+        newWindow = open("https://www.baidu.com/");
+    }
+
+    var c = document.getElementById("button2");
+    c.onclick = function(){
+        newWindow.close();
+    }
+    // 一次性定时器
+    // setTimeout("fun()",1000);
+    // setTimeout(fun,1000);
+    function fun(){
+        alert("boom~~~");
+    }
+    //循环定时器
+    var id = setInterval(fun,1000);
+    clearInterval(id);
+
+</script>
+</body>
+</html>

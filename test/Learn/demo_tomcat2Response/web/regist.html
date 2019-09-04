@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regist</title>
+    <script>
+        window.onload = function () {
+            var img = document.getElementsById("checkCode");
+            img.onclick = function () {
+                var data = new Date().getTime();
+                img.src = "/demo2/responseDemo6?"+data;
+            };
+        }
+    </script>
+</head>
+<body>
+    <img id="checkCode" src="/demo2/responseDemo6" onclick="fun1()"/>
+    <a id="change" href="" >看不清换一张</a>
+</body>
+</html>

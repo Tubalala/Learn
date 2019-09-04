@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<form method="post">
+    <!--
+    get:请求参数会在地址栏中显示，请求参数大小是有限制的，不安全
+    post:请求参数不会在地址栏中显示，请求参数大小没有限制的，安全
+    都会封装到请求体中
+    -->
+    <a>用户名</a><input type="text" name="username"><br>
+    <a>密码</a><input type="password" name="username"><br>
+    <button type="submit">登录</button>
+</form>
+<hr>
+<form method="get">
+    <!--
+    input:可以通过type改变元素展示样式
+    type:text文本输入框 password密码输入框
+        radio:单选框  name要一致 value要指定相应的值
+        checkbox:多选框   name要一致 value要指定相应的值
+        checked属性，可以指定默认值
+        placeholder：指定输入框的提示信息，会自动清空
+        file:选择文件
+        hidden：隐藏域
+    label:指定输入项的文字描述信息，for一般会和input的id属性值对应，点击label区域会让输入框获取焦点
+
+    select：下拉列表 option用于指定列表项  selected 默认选中
+
+    textarea：文本域 cols默认行数  rows默认列数
+    -->
+    <label for="username">用户名</label><input name="username" placeholder="请输入用户名" id="username"><br>
+    <a>密码</a><input name="username" placeholder="请输入密码"><br>
+    <a>性别</a><input type="radio" name="sex" value="male">男
+    <input type="radio" name="sex" value="female">女<br>
+    爱好:<input type="checkbox" name="hobby" value="shopping">购物
+    <input type="checkbox" name="hobby" value="game">游戏
+    <input type="checkbox" name="hobby" value="java">Java<br>
+    选择文件<input type="file" name="file"><br>
+    隐藏域<input type="hidden" name="id" id="aaaa"><br>
+    取色器<input type="color" name="color" ><br>
+    日期<input type="date" name="date"><br>
+    日期<input type="datetime-local" name="date"><br>
+    邮箱<input type="email" name="email"><br>
+    年龄<input type="number" name="age"><br>
+    省份：<select name="Province">
+    <option value="" selected>——请选择——</option>
+    <option value="1">上海</option>
+    <option value="2">北京</option>
+</select><br>
+    <textarea cols="4" rows="5"></textarea>
+    <button type="submit">登录</button>
+</form>
+</body>
+</html>

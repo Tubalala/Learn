@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<users>
+    <user id="1">
+        <name>张三</name>
+        <age>24</age>
+        <gender>男</gender>
+    </user>
+
+    <user id="2">
+        <name>李四</name>
+        <age>28</age>
+        <gender>女</gender>
+    </user>
+    <![CDATA[
+        if (a > b && a < c){}
+        ]]>
+</users>

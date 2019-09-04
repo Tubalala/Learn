@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegExp</title>
+    <script>
+        var reg = new RegExp("^\\w{6,12}$");
+        var reg2 = /\w{6,12}/;
+        var name = "abcbabcbabcab";
+        var b = reg.test(name);
+        document.write(b);
+        var a = encodeURI("张三");
+        document.write("<br>"+a);
+        var b = decodeURI(a);
+        document.write("<br>"+b);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

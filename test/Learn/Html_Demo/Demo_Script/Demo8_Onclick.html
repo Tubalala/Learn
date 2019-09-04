@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Onclick</title>
+</head>
+<body>
+    <button id="p">电灯打开</button>
+    <script>
+        var a = document.getElementById("p");
+        var flag = true;
+        a.onclick = function () {
+            if (flag) {
+                a.innerText = "电灯关闭";
+                flag = false;
+            }else{
+                a.innerText = "电灯打开";
+                flag = true;
+            }
+        }
+    </script>
+</body>
+</html>

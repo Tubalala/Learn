@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a>try</a>
+<input type="button" id="btn" value="设置属性">
+<input type="button" id="btn1" value="移除属性">
+
+<script>
+    var  btn = document.getElementById("btn");
+    btn.onclick = function () {
+        var a = document.getElementsByTagName("a")[0];
+        a.setAttribute("href","https://www.baidu.com");
+    }
+
+    var  btn1 = document.getElementById("btn1");
+    btn1.onclick = function () {
+        var a = document.getElementsByTagName("a")[0];
+        a.removeAttribute("href");
+    }
+</script>
+</body>
+</html>
