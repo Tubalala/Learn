@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance student.xsd"
-          xmlns:a="http://www.w3.org/2001/XMLSchema-instance">
-    <student>
-
-    </student>
-</students>
