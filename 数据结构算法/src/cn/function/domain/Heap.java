@@ -77,7 +77,7 @@ public class Heap {
      * @param a
      * @param n
      */
-    public static void headSort(int[] a,int n){
+    public static void heapSort(int[] a,int n){
         buildHeap(a,n);
         int k = n;
         while (k > 1) {
@@ -93,6 +93,7 @@ public class Heap {
         a[j] = temp;
     }
 
-
-
+    public int[] toArray(){
+            return a;
+    }
 }

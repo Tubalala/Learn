@@ -25,6 +25,21 @@ import java.util.Queue;
  */
 public class t279 {
     public int numSquares(int n) {
+        List<Integer> sq = createSquares(n);
+        int[] dp = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            int min = Integer.MAX_VALUE;
+            for (Integer t : sq) {
+                if (t > i) {
+                    break;
+                }
+                min = Math.min(min,dp[i-t]+1);
+            }
+            dp[i] = min;
+        }
+        return dp[n];
+    }
+    /*public int numSquares(int n) {
         List<Integer> sqList = createSquares(n);
         Queue<Integer> queue = new LinkedList<>();
         boolean[] marked = new boolean[n + 1];
@@ -53,7 +68,7 @@ public class t279 {
             }
         }
         return n;
-    }
+    }*/
 
     private List<Integer> createSquares(int n) {
         ArrayList<Integer> ret = new ArrayList<>();
@@ -67,6 +82,6 @@ public class t279 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new t279().numSquares(3));
+        System.out.println(new t279().numSquares(7));
     }
 }
