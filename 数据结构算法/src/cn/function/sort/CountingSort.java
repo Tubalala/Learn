@@ -29,6 +29,7 @@ public class CountingSort {
 
         //对数组进行排序存入临时数组中
         int[] temp = new int[a.length];
+
         for (int i = 0; i < a.length; i++) {
             int index = c[a[i]] - 1;
             temp[index] = a[i];
